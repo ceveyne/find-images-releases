@@ -1,10 +1,17 @@
+---
+title: "README_Find_Images_App"
+tags: ["find-images", "app", "readme"]
+created: "2026-07-31T10:47:52.423Z"
+updated: "2026-07-31T10:47:52.423Z"
+---
+
 # Find Images.app
 
 > **Standalone desktop application for local image search**
 >
-> Find Images.app is the standalone version of the [find-image](https://lmstudio.ai/ceveyne/find-image) LM Studio plugin. It gives you the same multimodal search engine — visual, text-based, and metadata-driven — without requiring LM Studio or an AI agent.
+> **[Find Images.app](https://github.com/ceveyne/find-images-releases/releases)** is the standalone version of the **[find-image](https://lmstudio.ai/ceveyne/find-image)** LM Studio plugin. It gives you the same multimodal search engine — visual, text-based, and metadata-driven — without requiring LM Studio or an AI agent.
 
-The app is for people who either are not fans of "agentic" AI or believe they make the best agent themselves. Functionally there are no major differences between the app and the plugin. But where the plugin lets you continue directly with results in LM Studio (e.g., using **[analyse-image](https://lmstudio.ai/ceveyne/analyse-image)** to detect objects, or **[process-image](https://lmstudio.ai/ceveyne/process-image)** / **[draw-things-chat](https://lmstudio.ai/ceveyne/draw-things-chat)** for edits), **Find Images.app** skips the agent layer and focuses on its core purpose: _finding images_.
+The **[app](https://github.com/ceveyne/find-images-releases/releases)** is for people who either are not particular fans of "agentic" AI or believe they make the best agent themselves anyway. Functionally there are no major differences between the **[app](https://github.com/ceveyne/find-images-releases/releases)** and the **[find-image](https://lmstudio.ai/ceveyne/find-image)**-plugin. But where the plugin lets you continue directly with results in LM Studio (e.g., using **[analyse-image](https://lmstudio.ai/ceveyne/analyse-image)** to detect objects, or **[process-image](https://lmstudio.ai/ceveyne/process-image)** / **[draw-things-chat](https://lmstudio.ai/ceveyne/draw-things-chat)** for edits), **[Find Images.app](https://github.com/ceveyne/find-images-releases/releases)** skips the agent layer and focuses on its core purpose: _finding images_.
 
 It is designed for browsing and organizing large image collections — or unearthing forgotten visual treasures from your own archives.
 
@@ -34,11 +41,17 @@ It is designed for browsing and organizing large image collections — or uneart
 
 ## What It Does
 
-**Find Images.app** searches local image stores using a combination of metadata search and multimodal embedding search powered by [Qwen3-VL-Embedding](https://github.com/QwenLM/Qwen3-VL-Embedding).
+**[Find Images.app](https://github.com/ceveyne/find-images-releases/releases)** searches local image stores using a combination of metadata search and multimodal embedding search powered by [Qwen3-VL-Embedding](https://github.com/QwenLM/Qwen3-VL-Embedding).
 
-The search is **multimodal**. This means: results are not only found because they carry matching tags or contain parts of your query in their metadata. Search also works purely visually. Natural language descriptions find images, reference images find similar images, tags find images, filenames find images — and you can combine all of these signals. You can use metadata to search, apply hard filters on structured fields, and much more.
+The search is **multimodal**. This means: it doesn't just find images that are appropriately tagged or contain parts of the search query in their metadata. Searching and finding also works purely _visually_.
 
-Although both the app and its plugin sibling originated in [Draw Things](https://drawthings.ai/) projects (.sqlite3, PNG), analog photos (JPEG) now receive the same attention through EXIF metadata support as AI-generated images do.
+Natural language descriptions find images, reference images find images, tags find images, filenames find images. (And you can combine everything — use the metadata for searching, apply hard filters on structured fields, and more.)
+
+Although our tools originated from **Draw Things** projects (.sqlite3, PNG), analog photos (JPEG) now receive the same attention and love as generated images through EXIF metadata support.
+
+![text-query-analogue-photography](docs/images/text-query-analogue-photography.jpeg)
+
+> This example shows a simple text search — which can be a great starting point. To refine your search and steer it in the desired direction, you can drag any image from the result list into the input field as a reference.
 
 ### Search Sources
 
@@ -72,9 +85,12 @@ First launch triggers a guided onboarding wizard:
 
 ![onboarding-everything-is-ready](docs/images/onboarding-everything-is-ready.jpeg)
 
-> ⚠️ Do **not** place Qwen3-VL-Embedding models in `~/.lmstudio/models`. LM Studio does not support them yet and may interfere with regular Qwen3-VL models.
+> ⚠️ Do **not** place Qwen3-VL-Embedding models in `~/.lmstudio/models`. LM Studio does not support them yet and the embedding models may interfere with regular Qwen3-VL models.
 
 After onboarding, you can change all settings in-app at any time.
+
+> Before things get going for real, you need to index the images you want to be able to find. On reasonably fast hardware, this rarely takes less than 1 second or more than 5 seconds per image. Start with a manageable amount for your first test. You can start and stop indexing at any time. It's normal for fans to spin up during longer indexing runs — the built-in llama-server fully utilizes the GPU.
+> 💡 By default, very large images (>1k) are converted before embedding. This delivers roughly 10–15× faster indexing performance but may affect precision. If you disable `Use Previews for Image Retrieval` in `Settings`, images will be embedded at their original resolution — which takes longer and works for images up to 6k. It's worth comparing the time investment and results to find the setting that works best for you.
 
 ## Using Find Images.app
 
@@ -86,9 +102,15 @@ The app has a three-panel layout:
 - **Center** — search bar (with optional reference image) and results in tiles, list, or table view
 - **Right sidebar** — result details panel or settings
 
-![text-query-analogue-photography](docs/images/text-query-analogue-photography.jpeg)
-
 All panels are resizable. Layout state is persisted between sessions.
+
+![reference-image-query-results](docs/images/reference-image-query-results.jpeg)
+
+> This screenshot shows the layout with both sidebars closed.
+
+![reference-image-query-details](docs/images/reference-image-query-details.jpeg)
+
+> This screenshot shows the layout with both sidebars open: on the left you see the details of the reference image, on the right the details of the selected result.
 
 ### Searching
 
@@ -107,9 +129,15 @@ Two toggle options modify how reference images are used:
 
 ![reference-image-query-settings](docs/images/reference-image-query-settings.jpeg)
 
-![reference-image-query-include-metadata](docs/images/reference-image-query-include-metadata.jpeg)
+> This example nicely illustrates how result ranking is structured: the first four results are similar to the reference image both in content _and_ style. The next eight results match "only" on a thematic level.
 
-![reference-image-query-include-metadata-ignore-image](docs/images/reference-image-query-include-metadata-ignore-image.jpeg)
+![reference-image-include-metadata](docs/images/reference-image-query-include-metadata.jpeg)
+
+> This example shows what influence metadata has on the result list: because the prompt for the reference image describes a 2D illustration style, the photorealistic results have disappeared — all twelve images now show a "2D vector illustration style with thick dark outlines, flat colors, and a cute chibi aesthetic."
+
+![reference-image-include-metadata-ignore-image](docs/images/reference-image-query-include-metadata-ignore-image.jpeg)
+
+> In this third example, both `Include metadata` _and_ `Ignore image` are active. This means: only the metadata from the reference image feeds into the search — not its visual content. Result: all dogs (except the reference image itself) have been dropped from the results list — more precisely, from the top twelve positions — because the prompt describes only the style but no subject ("dog"). Visual similarity therefore has no influence; only the metadata counts.
 
 ### Result Views
 
@@ -119,9 +147,11 @@ Three view modes let you navigate results differently:
 - **Tiles** — grid of image previews with score badges and source indicators
 - **List** — compact vertical list showing filename, prompt snippet, model, and date
 - **Table** — sortable columns for size, model, origin, created date, match type, and score
-- **Open preview** - Navigate through query results by opening a large preview by <space>, using arrow keys to browse the results.
+- **Open preview** — Navigate through query results by opening a large preview with `<space>`, using arrow keys to browse the results.
 
 ![reference-image-query-include-metadata-open-preview](docs/images/reference-image-query-include-metadata-open-preview.jpeg)
+
+> To quickly review many results in detail, you can use the large preview mode. The easiest way is via keyboard: `<Tab>` switches between queries in the workspace and results in the center panel. `<Space>` opens the preview. Use arrow keys to navigate through the images.
 
 ### Result Details
 
@@ -139,6 +169,16 @@ Any structured field in the detail panel can be dragged into the search bar as a
 
 ![structured-filter-use-as-reference](docs/images/structured-filter-use-as-reference.jpeg)
 
+> In this example, clicking the `+` button in the detail panel turned the `Model` field into a filter — visible as the `Model` chip at the top of the query bar. This limits results to images matching that model only; all other potential matches are excluded. The remaining search functions work exactly as they would without any filter: you describe what you're looking for, use reference images, etc., but you'll only be shown results that match the `Model` criterion.
+
+### Structured Filters from Filenames
+
+Filenames represent a special form of filtering. This works in principle with individual image files too, but it's especially useful for Draw Things project files (sqlite3). You can use Find Images to see _all_ generated images within a single project file — and if needed, also search _within_ that specific project file.
+
+![browse-draw-things-project-sqlite3](docs/images/browse-draw-things-project-sqlite3.jpeg)
+
+![search-within-draw-things-project-sqlite3](docs/images/search-within-draw-things-project-sqlite3.jpeg)
+
 ### Tag Management
 
 Images can be tagged for organization:
@@ -147,9 +187,12 @@ Images can be tagged for organization:
 - **Drag tag sets** between results to copy tags across multiple images
 - **Filter by tags** using `Tags: illustration, 2d` syntax in the query bar
 - Tags persist in the index until explicitly removed
-  ⚠️ A single tag cannot contain spaces
+
+⚠️ A single tag cannot contain spaces
 
 ![query-by-tag](docs/images/query-by-tag.jpeg)
+
+> Tags behave like the structured filters described above — except that you can freely define and assign them. This works with individual images as well as multi-image selections.
 
 ### Projects and Queries
 
@@ -238,6 +281,10 @@ Use one, two, three, or all four criteria in each search, depending on what you 
 | **"Require specific generation metadata"**                    | `query` with `Model:`, `LoRAs:`, `Size:`, `Source:`, `Origin:`, or `Timestamp:` | These hard AND filters limit candidates before retrieval and reranking.                                                 |
 | **"Prompt or metadata similarity without visual similarity"** | `reference image + Include metadata + Ignore image`                             | Uses reference metadata as a text-based similarity signal while deliberately omitting image pixels.                     |
 
+![same-subject-different-style](docs/images/same-subject-different-style.jpeg)
+
+> This example shows how to formulate a query when you have a reference image but are looking for something that differs from it in specific ways — here: the same person, different style. The best approach is to clearly describe what your target image should look like. Visual similarity comes from the reference image itself. Restrictive phrasing such as "but" or "only" works less well than a clear, positively formulated description of exactly what you want to see in the end result.
+
 The `Tags` section allows you to manage persistent tags for indexed images:
 
 - You can list all existing tags by clicking into the `Add tag` field, add, or remove one or more tags for indexed images shown within the current query.
@@ -260,8 +307,6 @@ The `Tags` section allows you to manage persistent tags for indexed images:
 **Use the plugin** if you want to find images and then immediately work with them in LM Studio — analyze, edit, generate variations.
 
 **Use Find Images.app** if you want a dedicated search tool for browsing, organizing, and discovering images without any agent layer.
-
-![reference-image-query-details](docs/images/reference-image-query-details.jpeg)
 
 ## Persistent Data
 
