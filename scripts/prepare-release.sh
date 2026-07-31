@@ -43,7 +43,7 @@ if [[ ! -f "$DMG_PATH" ]]; then
 fi
 
 rm -f "$ZIP_PATH" "$CHECKSUM_PATH"
-ditto -c -k --sequesterRsrc --keepParent "$DMG_PATH" "$ZIP_PATH"
+ditto -c -k --sequesterRsrc "$DMG_PATH" "$ZIP_PATH"
 shasum -a 256 "$ZIP_PATH" > "$CHECKSUM_PATH"
 
 echo "Prepared release v$VERSION"
