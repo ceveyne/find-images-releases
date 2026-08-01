@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.50-2] - 2026-08-01
+
+### Added
+
+- Added context menus, cut/copy/paste for queries, and matching icons across the app.
+
+---
+
 ## [0.1.50-1] - 2026-07-31
 
 ### Added
