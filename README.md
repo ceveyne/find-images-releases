@@ -47,7 +47,7 @@ The search is **multimodal**. This means: it doesn't just find images that are a
 
 Natural language descriptions find images, reference images find images, tags find images, filenames find images. (And you can combine everything — use the metadata for searching, apply hard filters on structured fields, and more.)
 
-Although our tools originated from **Draw Things** projects (.sqlite3, PNG), analog photos (JPEG) now receive the same attention and love as generated images through EXIF metadata support.
+Although our tools originated from **Draw Things** projects (.sqlite3, PNG), camera photos — including HEIC from iPhone and Apple Photos — now receive the same attention and love as generated images through EXIF metadata support.
 
 ![text-query-analogue-photography](docs/images/text-query-analogue-photography.jpeg)
 
@@ -58,6 +58,7 @@ Although our tools originated from **Draw Things** projects (.sqlite3, PNG), ana
 The local index can include:
 
 - **Image directories** — any folders you add containing image files
+- **Apple Photos Library** — your Apple Photos Library, indexed through Apple Photos' permission-based access (optional)
 - **Draw Things generations** created by draw-things-chat or process-image
 - **Saved Draw Things / ComfyUI images** with PNG metadata
 - **LM Studio chat attachments** with metadata sidecars (optional)
@@ -65,8 +66,13 @@ The local index can include:
 - **Draw Things project files** with generation history and thumbnails
 - **Plain saved images** without any metadata
 
-The multimodal index accepts PNG, JPG/JPEG, TGA, BMP, PSD, GIF, HDR, PIC, PPM, and PGM.
-⚠️ WebP, TIFF/TIF, HEIC, and HEIF are _not_ supported.
+The multimodal index accepts these extension-based input formats:
+
+- **Native formats:** PNG, JPG/JPEG, HEIC, TGA, BMP, PSD, GIF, HDR, PIC, PPM, and PGM.
+- **Other macOS formats:** ASTC, AVCI, AVIF, DDS, DCM, EXR, HEICS, HEIF, ICNS, ICO, JP2, JXL, KTX, MPO, PBM, PDF, PICT, PVR, SGI, SVG, TIFF, and WebP.
+- **RAW formats:** 3FR, ARW, AXR, CR2, CR3, CRW, DCR, DNG, DXO, ERF, FFF, IIQ, MOS, MRW, NEF, NEFX, NRW, ORF, PEF, RAF, RAW, RW2, RWL, SR2, SRF, SRW, and TIF.
+
+HEIC files work both from image directories and from the Apple Photos Library. RAW format support is controlled by the `RAW Images` setting.
 
 ## Setup
 
@@ -214,6 +220,8 @@ The settings are mostly self-explanatory. Here are a few highlights:
 - **Embedding model path** — location of the GGUF model
 - **Runtime engine path** — location of the llama-server binary
 - This is the place to manage your **Image directories** — folders to scan and index.
+- `Search Apple Photos Library` adds your Apple Photos Library as a search source. The next index refresh asks for Apple Photos permission, then indexes the images you have allowed the app to access.
+- `RAW Images` is disabled by default. Enable it to add RAW camera files to the corpus index; RAW reference images work even while it is disabled.
 - `Search Working Directories` adds LM Studio Chat Working Directories as a search source. This is especially useful if these contain generated images from tools like **[draw-things-chat](https://lmstudio.ai/ceveyne/draw-things-chat)**.
 - As a Draw **Things User** you may want to enable `Search Draw Things Projects`.
 - **Projects Directory** allows you to change the default directory containing Draw Things project files.
