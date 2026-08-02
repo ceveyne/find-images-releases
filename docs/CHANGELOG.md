@@ -9,19 +9,15 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.51-3] - 2026-08-02
+## [0.1.51-5] - 2026-08-02
 
 ### Added
 
 - Added support for native PNG, JPG/JPEG, HEIC, TGA, BMP, PSD, GIF, HDR, PIC, PPM, and PGM images.
 - Added support for ASTC, AVCI, AVIF, DDS, DCM, EXR, HEICS, HEIF, ICNS, ICO, JP2, JXL, KTX, MPO, PBM, PDF, PICT, PVR, SGI, SVG, TIFF, and WebP images.
 - Added optional RAW image indexing for 3FR, ARW, AXR, CR2, CR3, CRW, DCR, DNG, DXO, ERF, FFF, IIQ, MOS, MRW, NEF, NEFX, NRW, ORF, PEF, RAF, RAW, RW2, RWL, SR2, SRF, SRW, and TIF images.
-- Added Apple Photos library support.
+- Added Apple Photos Library support.
 - Added context menus, cut/copy/paste for queries, and matching icons across the app.
-
-### Changed
-
-- Apple Photos indexing now continues past unavailable originals instead of stopping the library scan.
 
 ---
 
