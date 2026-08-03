@@ -220,8 +220,8 @@ The settings are mostly self-explanatory. Here are a few highlights:
 - **Embedding model path** — location of the GGUF model
 - **Runtime engine path** — location of the llama-server binary
 - This is the place to manage your **Image directories** — folders to scan and index.
-- `Search Apple Photos Library` adds your Apple Photos Library as a search source. The next index refresh asks for Apple Photos permission, then indexes the images you have allowed the app to access.
-- `RAW Images` is disabled by default. Enable it to add RAW camera files to the corpus index; RAW reference images work even while it is disabled.
+- `Search Apple Photos Library` adds your Apple Photos Library as a search source. The next index refresh asks for Apple Photos permission, then indexes the images you have allowed the app to access. 
+> The app uses the original-resolution assets from Apple Photos, which may need to be downloaded from iCloud first. This can make indexing Apple Photos slower than local files, especially when many originals are stored only in iCloud. Enabling **Photos ▸ Settings ▸ iCloud ▸ Download Originals to this Mac** can speed up later indexing runs once the originals are local. (Find Images.app app cannot change this setting for you.)
 - `Search Working Directories` adds LM Studio Chat Working Directories as a search source. This is especially useful if these contain generated images from tools like **[draw-things-chat](https://lmstudio.ai/ceveyne/draw-things-chat)**.
 - As a Draw **Things User** you may want to enable `Search Draw Things Projects`.
 - **Projects Directory** allows you to change the default directory containing Draw Things project files.
