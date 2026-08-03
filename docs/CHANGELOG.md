@@ -9,19 +9,19 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.51-7] - 2026-08-03
+## [0.1.51-8] - 2026-08-04
 
 ### Added
 
-
-- Apple Photos indexing can now be restricted to selected albums.
 - Added a setting to purge multimodal embeddings for images that are no longer part of the configured sources.
+- Apple Photos indexing can now be restricted to selected albums.
 - Apple Photos indexing now shows per-image average time and estimated remaining time.
 - Searches for an image filename now also match Apple Photos originals by their original filename.
 - Added a Copy Log button to copy the current indexer log to the clipboard.
 
 ### Changed
 
+- PSD images are now normalized before embedding and search to improve compatibility.
 - The Apple Photos authorization status is now logged at indexing time.
 - README clarifies that Apple Photos indexing downloads originals from iCloud when necessary.
 
