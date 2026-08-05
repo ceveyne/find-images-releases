@@ -9,6 +9,17 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.51-9] - 2026-08-05
+
+### Added
+
+- Added in-app auto-updates: the Settings screen shows the installed version and a button to check for updates; new versions can be downloaded and installed directly.
+- Added a "Check for updates…" item to the app menu.
+- Added a Help window with the full README and searchable in-page help.
+- The macOS Help Viewer is now integrated; searching from the menu bar finds help topics and jumps to them.
+
+---
+
 ## [0.1.51-8] - 2026-08-04
 
 ### Added

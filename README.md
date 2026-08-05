@@ -1,10 +1,3 @@
----
-title: "README_Find_Images_App"
-tags: ["find-images", "app", "readme"]
-created: "2026-07-31T10:47:52.423Z"
-updated: "2026-07-31T10:47:52.423Z"
----
-
 # Find Images.app
 
 > **Standalone desktop application for local image search**
