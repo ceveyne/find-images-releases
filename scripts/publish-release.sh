@@ -42,22 +42,22 @@ if [[ "$DRY_RUN" == false ]]; then
 fi
 
 "$SCRIPT_DIR/sync-docs-to-app.sh" --check
-"$SCRIPT_DIR/prepare-release.sh"
+"$SCRIPT_DIR/prepare-release.sh" --notarize
 
 VERSION="$(node -p 'require(process.argv[1]).version' "$APP_DIR/package.json")"
 TAG="v$VERSION"
 ARTIFACTS_DIR="$RELEASE_REPO_DIR/artifacts"
-DMG_ZIP_PATH="$ARTIFACTS_DIR/Find-Images-${VERSION}-arm64.dmg.zip"
+DMG_PATH="$ARTIFACTS_DIR/Find-Images-${VERSION}-arm64.dmg"
 APPCAST_PATH="$ARTIFACTS_DIR/appcast.xml"
 NOTES_PATH="$ARTIFACTS_DIR/release-notes-v${VERSION}.md"
 CHECKSUM_PATH="$ARTIFACTS_DIR/SHA256SUMS.txt"
 
 if [[ "$DRY_RUN" == true ]]; then
-  printf 'Would publish %s to %s with:\n  %s\n  %s\n  %s\n  %s\n' "$TAG" "$GITHUB_REPOSITORY" "$NOTES_PATH" "$DMG_ZIP_PATH" "$APPCAST_PATH" "$CHECKSUM_PATH"
+  printf 'Would publish %s to %s with:\n  %s\n  %s\n  %s\n  %s\n' "$TAG" "$GITHUB_REPOSITORY" "$NOTES_PATH" "$DMG_PATH" "$APPCAST_PATH" "$CHECKSUM_PATH"
   exit 0
 fi
 
-"$GH_BIN" release create "$TAG" "$DMG_ZIP_PATH" "$APPCAST_PATH" "$CHECKSUM_PATH" \
+"$GH_BIN" release create "$TAG" "$DMG_PATH" "$APPCAST_PATH" "$CHECKSUM_PATH" \
   --repo "$GITHUB_REPOSITORY" \
   --target main \
   --title "Find Images $VERSION" \

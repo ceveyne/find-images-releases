@@ -1,22 +1,29 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const [version, dmgZipPath, outputPath, baseUrl, edSignature] = process.argv.slice(2);
+const [version, dmgPath, outputPath, baseUrl, edSignature] = process.argv.slice(2);
 
-if (!version || !dmgZipPath || !outputPath || !baseUrl) {
-  console.error("Usage: generate-appcast.mjs <version> <dmg-zip-path> <output-path> <base-url> [ed-signature]");
+if (!version || !dmgPath || !outputPath || !baseUrl) {
+  console.error("Usage: generate-appcast.mjs <version> <dmg-path> <output-path> <base-url> [ed-signature]");
   process.exit(1);
 }
 
-if (!fs.existsSync(dmgZipPath)) {
-  console.error(`DMG-ZIP not found: ${dmgZipPath}`);
+if (!fs.existsSync(dmgPath)) {
+  console.error(`DMG not found: ${dmgPath}`);
   process.exit(1);
 }
 
-const dmgZipName = path.basename(dmgZipPath);
-const releaseUrl = `${baseUrl.replace(/\/$/, "")}/${encodeURIComponent(dmgZipName)}`;
-const length = fs.statSync(dmgZipPath).size;
+function normalizeVersionForComparison(versionString) {
+  // Convert display versions like "0.1.51-9" to numeric versions like "0.1.51.9"
+  // so Sparkle's standard comparator treats "10" as greater than "9".
+  return versionString.replace(/-(\d+)$/, ".$1");
+}
+
+const dmgName = path.basename(dmgPath);
+const releaseUrl = `${baseUrl.replace(/\/$/, "")}/${encodeURIComponent(dmgName)}`;
+const length = fs.statSync(dmgPath).size;
 const pubDate = new Date().toUTCString();
+const comparisonVersion = normalizeVersionForComparison(version);
 
 const enclosureUrl = releaseUrl
   .replace(/&/g, "&amp;")
@@ -38,7 +45,7 @@ const xml = `<?xml version="1.0" encoding="utf-8"?>
     <item>
       <title>Find Images ${version}</title>
       <pubDate>${pubDate}</pubDate>
-      <sparkle:version>${version}</sparkle:version>
+      <sparkle:version>${comparisonVersion}</sparkle:version>
       <sparkle:shortVersionString>${version}</sparkle:shortVersionString>
       <enclosure url="${enclosureUrl}" length="${length}" type="application/octet-stream"${edSignatureAttr} />
     </item>
