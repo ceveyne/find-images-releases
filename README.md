@@ -21,6 +21,7 @@ It is designed for browsing and organizing large image collections — or uneart
   - [Structured Filters from Details](#structured-filters-from-details)
   - [Tag Management](#tag-management)
   - [Projects and Queries](#projects-and-queries)
+- [App Update](#app-update)
 - [Settings](#settings)
   - [General](#general)
   - [Search](#search)
@@ -29,7 +30,6 @@ It is designed for browsing and organizing large image collections — or uneart
 - [Behind the Scenes: Fusion Embedding](#behind-the-scenes-fusion-embedding)
 - [Comparing App vs Plugin](#comparing-app-vs-plugin)
 - [Persistent Data](#persistent-data)
-- [Staying Up to Date](#staying-up-to-date)
 - [License](#license)
 
 ## What It Does
@@ -208,6 +208,12 @@ General Settings are accessible from the left sidebar. They mirror the plugin's 
 Search-based Settings are accessible from the right sidebar. They are stored individually with every query.
 The settings are mostly self-explanatory. Here are a few highlights:
 
+## App Update
+
+Find Images.app checks for updates shortly after startup. When an update is available, a toolbar button appears and the Settings screen shows the available version alongside a button to download and install it.
+
+You can also choose `Check for updates…` from the app menu at any time. After download, install the update from Settings; the app then restarts with the new version.
+
 ### General
 
 - **Embedding model path** — location of the GGUF model
@@ -318,12 +324,6 @@ The `Tags` section allows you to manage persistent tags for indexed images:
 ```
 
 These files survive app updates.
-
-## Staying Up to Date
-
-Download new releases from the [releases page](https://github.com/ceveyne/find-images-releases/releases). Your settings and embeddings persist across versions.
-
-💡 Watch this repository on GitHub to get notified about updates. 👀
 
 ## License
 
