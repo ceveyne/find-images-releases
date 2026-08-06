@@ -9,6 +9,19 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.52-2] - 2026-08-07
+
+### Added
+
+- Added a Privacy section to the README explaining that all search happens locally, with the update check and iCloud Photos exceptions.
+
+### Changed
+
+- Pressing Enter in the Help window's search field now jumps directly to the first match.
+- The Help window's next and previous search buttons now highlight when multiple matches are available.
+
+---
+
 ## [0.1.52-1] - 2026-08-06
 
 ### Added

@@ -31,6 +31,7 @@ It is designed for browsing and organizing large image collections — or uneart
 - [Behind the Scenes: Fusion Embedding](#behind-the-scenes-fusion-embedding)
 - [Comparing App vs Plugin](#comparing-app-vs-plugin)
 - [Persistent Data](#persistent-data)
+- [Privacy](#privacy)
 - [License](#license)
 
 ## What It Does
@@ -327,6 +328,15 @@ The `Tags` section allows you to manage persistent tags for indexed images:
 ```
 
 These files survive app updates.
+
+## Privacy
+
+All search processing in Find Images.app happens entirely locally on your device: no tracking, no telemetry, no external services.
+
+Two exceptions:
+
+- The app connects to [https://github.com/ceveyne/find-images-releases/releases](https://github.com/ceveyne/find-images-releases/releases) to check for app updates.
+- If the Apple Photos Library is enabled as a source, the app may connect to iCloud to download originals.
 
 ## License
 
