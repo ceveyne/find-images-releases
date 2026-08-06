@@ -1,8 +1,0 @@
-*
-!.gitignore
-!README.md
-!docs/
-!docs/**
-!scripts/
-!scripts/sync-readme-de.mjs
-docs/**/.DS_Store
