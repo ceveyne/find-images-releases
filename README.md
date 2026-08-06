@@ -19,6 +19,7 @@ It is designed for browsing and organizing large image collections — or uneart
   - [Result Views](#result-views)
   - [Result Details](#result-details)
   - [Structured Filters from Details](#structured-filters-from-details)
+  - [Structured Filters from Filenames](#structured-filters-from-filenames)
   - [Tag Management](#tag-management)
   - [Projects and Queries](#projects-and-queries)
 - [App Update](#app-update)
@@ -26,7 +27,7 @@ It is designed for browsing and organizing large image collections — or uneart
   - [General](#general)
   - [Search](#search)
   - [Indexing](#indexing)
-- [Use cases](#use-cases)
+- [Use Cases](#use-cases)
 - [Behind the Scenes: Fusion Embedding](#behind-the-scenes-fusion-embedding)
 - [Comparing App vs Plugin](#comparing-app-vs-plugin)
 - [Persistent Data](#persistent-data)
@@ -52,7 +53,7 @@ The local index can include:
 
 - **Image directories** — any folders you add containing image files
 - **Apple Photos Library** — your Apple Photos Library, indexed through Apple Photos' permission-based access (optional)
-- **Draw Things generations** created by draw-things-chat or process-image
+- **Draw Things generations** created by [draw-things-chat](https://lmstudio.ai/ceveyne/draw-things-chat) or [process-image](https://lmstudio.ai/ceveyne/process-image)
 - **Saved Draw Things / ComfyUI images** with PNG metadata
 - **LM Studio chat attachments** with metadata sidecars (optional)
 - **Images from LM Studio working directories** (optional)
@@ -202,27 +203,29 @@ Queries are organized into projects. Each project holds a list of saved searches
 - Transfer queries between projects (copy or move)
 - Reorder projects and queries via drag-and-drop
 
+## App Update
+
+Find Images.app checks for updates shortly after startup. When an update is available, a toolbar button appears and the Settings screen shows the available version alongside a button to download and install it.
+
+> 💡 Use `App Versions` from the Help menu to check the release notes to see what's new in the latest version.
+
+You can also choose `Check for updates…` from the app menu at any time. After download, install the update from Settings; the app then restarts with the new version.
+
 ## Settings
 
 General Settings are accessible from the left sidebar. They mirror the plugin's configuration options.
 Search-based Settings are accessible from the right sidebar. They are stored individually with every query.
 The settings are mostly self-explanatory. Here are a few highlights:
 
-## App Update
-
-Find Images.app checks for updates shortly after startup. When an update is available, a toolbar button appears and the Settings screen shows the available version alongside a button to download and install it.
-
-You can also choose `Check for updates…` from the app menu at any time. After download, install the update from Settings; the app then restarts with the new version.
-
 ### General
 
 - **Embedding model path** — location of the GGUF model
 - **Runtime engine path** — location of the llama-server binary
 - This is the place to manage your **Image directories** — folders to scan and index.
-- `Search Apple Photos Library` adds your Apple Photos Library as a search source. The next index refresh asks for Apple Photos permission, then indexes the images you have allowed the app to access. 
-> The app uses the original-resolution assets from Apple Photos, which may need to be downloaded from iCloud first. This can make indexing Apple Photos slower than local files, especially when many originals are stored only in iCloud. Enabling **Photos ▸ Settings ▸ iCloud ▸ Download Originals to this Mac** can speed up later indexing runs once the originals are local. (Find Images.app app cannot change this setting for you.)
+- `Search Apple Photos Library` adds your Apple Photos Library as a search source. The next index refresh asks for Apple Photos permission, then indexes the images you have allowed the app to access.
+> The app uses the original-resolution assets from Apple Photos, which may need to be downloaded from iCloud first. This can make indexing Apple Photos slower than local files, especially when many originals are stored only in iCloud. Enabling **Photos ▸ Settings ▸ iCloud ▸ Download Originals to this Mac** can speed up later indexing runs once the originals are local. (Find Images.app cannot change this setting for you.)
 - `Search Working Directories` adds LM Studio Chat Working Directories as a search source. This is especially useful if these contain generated images from tools like **[draw-things-chat](https://lmstudio.ai/ceveyne/draw-things-chat)**.
-- As a Draw **Things User** you may want to enable `Search Draw Things Projects`.
+- As a **Draw Things** User you may want to enable `Search Draw Things Projects`.
 - **Projects Directory** allows you to change the default directory containing Draw Things project files.
 
 ![general-settings](docs/images/general-settings.jpeg)
