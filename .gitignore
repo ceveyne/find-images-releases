@@ -1,2 +1,6 @@
-.DS_Store
-artifacts/
+*
+!.gitignore
+!README.md
+!docs/
+!docs/**
+docs/**/.DS_Store
