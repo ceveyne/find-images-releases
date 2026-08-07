@@ -9,10 +9,11 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.52-2] - 2026-08-07
+## [0.1.52-3] - 2026-08-07
 
 ### Added
 
+- New "Enabled Image Formats" setting lets you choose which image formats the indexer processes. File watchers only monitor the selected formats. Native formats (PNG, JPG/JPEG, HEIC, BMP, GIF, HDR, PIC), other macOS formats (HEICS, HEIF, PICT, TIFF, WebP), and RAW formats (DNG, RAW) are enabled by default.
 - Added a Privacy section to the README explaining that all search happens locally, with the update check and iCloud Photos exceptions.
 
 ### Changed
