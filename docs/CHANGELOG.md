@@ -21,6 +21,10 @@ Notable changes to this project will be documented in this file.
 - Pressing Enter in the Help window's search field now jumps directly to the first match.
 - The Help window's next and previous search buttons now highlight when multiple matches are available.
 
+### Fixed
+
+- Reference image previews now work for PSD, HEIC, RAW, and other macOS formats that require normalization. Previously they failed with an "unsupported image format" error.
+
 ---
 
 ## [0.1.52-1] - 2026-08-06
