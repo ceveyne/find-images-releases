@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.53-2] - 2026-08-10
+
+### Fixed
+
+- App updates no longer trigger search engine changes, and an existing current engine is recognized even when its settings files are missing.
+
+---
+
 ## [0.1.53-1] - 2026-08-10
 
 ### Added
