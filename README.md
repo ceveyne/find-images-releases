@@ -206,7 +206,9 @@ Queries are organized into projects. Each project holds a list of saved searches
 
 ## App Update
 
-Find Images.app checks for updates shortly after startup. When an update is available, a toolbar button appears and the Settings screen shows the available version alongside a button to download and install it.
+Find Images.app checks for app and local search engine updates shortly after startup. You can control startup checks with `Enable Check for Updates on Startup` in Settings.
+
+When an app or search engine update is available, a toolbar button appears. It opens the App Update section in Settings, where app updates take priority and search engine updates can be installed manually.
 
 > 💡 Use `App Versions` from the Help menu to check the release notes to see what's new in the latest version.
 

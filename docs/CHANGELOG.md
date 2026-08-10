@@ -9,6 +9,20 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.52-7] - 2026-08-10
+
+### Added
+
+- Added a setting to control update checks at startup; search engine updates are now signaled through the toolbar Update button, just like app updates.
+- New runtime engine v2026.08.10-b9951-376: Vision encoding for Qwen3-VL embedding and reranking now runs fully on the GPU on Apple Silicon; CPU fallback inside the image encoder was removed.
+- Settings now shows which search engine version is installed, and update checks detect whether the runtime is an official release, a development build, or a custom one.
+
+### Changed
+
+- Very large images (for example, RAW photos) are now scaled down just enough to still be embeddable when `Use Previews for Image Retrieval` is turned off.
+
+---
+
 ## [0.1.52-3] - 2026-08-07
 
 ### Added
