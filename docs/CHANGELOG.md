@@ -9,7 +9,16 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.53-3] - 2026-08-10
+## [0.1.53-4] - 2026-08-10
+
+### Added
+
+- Added an Index Overview with per-source embedding, skipped, and total counts.
+
+### Changed
+
+- Enabled Image Formats now highlights formats with repeated indexing errors in yellow.
+- Apple Photos albums now expand fully instead of scrolling in a fixed-height list.
 
 ### Fixed
 
