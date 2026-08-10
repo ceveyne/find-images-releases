@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.53-3] - 2026-08-10
+
+### Fixed
+
+- Runtime update buttons no longer show version numbers.
+
+---
+
 ## [0.1.53-2] - 2026-08-10
 
 ### Fixed
