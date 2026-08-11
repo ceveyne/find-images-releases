@@ -19,6 +19,7 @@ Notable changes to this project will be documented in this file.
 
 ### Changed
 
+- Updated the built-in auto-updater.
 - Enabled Image Formats now highlights formats with repeated indexing errors in yellow.
 - Apple Photos albums now expand fully instead of scrolling in a fixed-height list.
 
