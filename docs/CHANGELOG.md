@@ -9,7 +9,7 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.54-1] - 2026-08-11
+## [0.1.54-1] - 2026-08-12
 
 > **Important Notice:** This version cannot be installed through the built-in updater. Please download and install it manually.
 
