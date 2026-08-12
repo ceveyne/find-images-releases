@@ -23,6 +23,8 @@ Notable changes to this project will be documented in this file.
 - Enabled Image Formats now highlights formats with repeated indexing errors in yellow.
 - Apple Photos albums now expand fully instead of scrolling in a fixed-height list.
 - Max Results now goes up to 64 and always caps results exactly, including project/filename searches.
+- Raised Max Results default value from 6 to 8.
+- Updated README to reflect these changes.
 
 ### Fixed
 
