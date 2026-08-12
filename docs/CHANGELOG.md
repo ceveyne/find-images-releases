@@ -9,6 +9,20 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.54-2] - 2026-08-12
+
+### Changed
+
+- Max Results now goes up to 64 and always caps results exactly, including project/filename searches.
+- Raised Max Results default value from 6 to 8.
+- Updated README to reflect these changes.
+
+### Fixed
+
+- Index Overview no longer counts RAW images in Total/Embedded/Skipped when RAW Images is disabled.
+
+---
+
 ## [0.1.54-1] - 2026-08-12
 
 > **Important Notice:** This version cannot be installed through the built-in updater. Please download and install it manually.
