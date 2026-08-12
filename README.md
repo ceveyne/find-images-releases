@@ -239,7 +239,7 @@ The settings are mostly self-explanatory. Here are a few highlights:
 ### Search
 
 - **Allow byte-identical duplicates** — show all matching files including exact copies
-- **Max results** — how many results to display per query (25 = all)
+- **Max results** — how many results to display per query (up to 64)
 
 💡 All settings in this section are saved per query. `New query` resets all these to the default values. To store and re-use your personal default settings, simply copy or rename your favourite queries in your project and click on it to restore all its settings instead of clicking `New query`.
 
