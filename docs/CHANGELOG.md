@@ -9,6 +9,18 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.54-4] - 2026-08-17
+
+### Changed
+
+- Internal code restructuring.
+
+### Fixed
+
+- Fixed a gap where images found via Find Image could still slip back into the search index.
+
+---
+
 ## [0.1.54-2] - 2026-08-12
 
 ### Changed
