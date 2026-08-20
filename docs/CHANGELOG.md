@@ -9,6 +9,27 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.55-1] - 2026-08-20
+
+### Changed
+
+- Removed a redundant per-query source rescan, cutting roughly 4 seconds of overhead from each search.
+- Cache the embedding model fingerprint between searches, making repeated searches up to ~65% faster.
+- `New query` now keeps your current `Max results` value instead of resetting it to the default.
+- Draw Things project timestamps are now stored in a machine-parseable format.
+- Standardized internal embedding status-message handling.
+- `RAW Images` is now a simple on/off group switch over the RAW formats in `Enabled Image Formats`, instead of a separate independent setting.
+
+### Fixed
+
+- Fixed `Purge inactive multimodal embeddings` to work across every embedding model and dimension.
+- Fixed `Purge inactive multimodal embeddings` to also correctly account for `Enabled Image Formats`/`RAW Images`.
+- Fixed some source changes (e.g. Working Directories, Chat Attachments, Draw Things Projects) not triggering a re-sync when returning to the app from Settings.
+- Fixed incorrect LoRA order shown for some Draw Things project images.
+- Fixed Draw Things project images not being fully usable as a reference image.
+
+---
+
 ## [0.1.54-4] - 2026-08-17
 
 ### Changed
