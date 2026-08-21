@@ -9,7 +9,7 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.55-1] - 2026-08-20
+## [0.1.55-1] - 2026-08-21
 
 ### Changed
 
@@ -22,6 +22,7 @@ Notable changes to this project will be documented in this file.
 
 ### Fixed
 
+- Fixed long file names in the Details panel running past the edge instead of truncating.
 - Fixed `Purge inactive multimodal embeddings` to work across every embedding model and dimension.
 - Fixed `Purge inactive multimodal embeddings` to also correctly account for `Enabled Image Formats`/`RAW Images`.
 - Fixed some source changes (e.g. Working Directories, Chat Attachments, Draw Things Projects) not triggering a re-sync when returning to the app from Settings.
