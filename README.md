@@ -162,7 +162,7 @@ Click any result to open the detail panel on the right. It shows:
 - Prompt / generation parameters (size, model, LoRAs, match score, source, origin)
 - EXIF camera metadata (lens, exposure, aperture, ISO, focal length, GPS, etc.)
 - Existing Tags and tools to manage them and/or apply them to a query
-- "Use as reference", "Open preview", "Reveal in Finder", and "Copy prompt" actions
+- "Use as reference", "Open preview", "Reveal in Finder", "Copy prompt", and "Show on map" actions
 
 ### Structured Filters from Details
 
