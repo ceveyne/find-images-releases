@@ -9,6 +9,31 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.56-1] - 2026-08-30
+
+### Added
+
+- Added PostgreSQL server as index backend (experimental).
+- Added an option to connect to an already-running llama-server over the network as the multimodal embedding backend (experimental).
+- Added a "Show on map" action (details panel and right-click menu) that opens a photo's location in Maps.
+- Added support for <shift>+<click> range selection in Tiles/List/Table views.
+
+### Changed
+
+- Reduced the size of the embedding server's log file.
+- The (experimental) PostgreSQL search backend now avoids re-parsing and re-hashing an image whose content hasn't actually changed, even if its modification time has (e.g. after a backup or cloud re-sync).
+
+### Fixed
+
+- Fixed the image preview sometimes closing instead of advancing when browsing search results with the arrow keys.
+- Fixed the local embedding server occasionally restarting itself during a long indexing run.
+- Fixed already-indexed images sometimes being re-embedded unnecessarily when a search ran while a manual reindex was still in progress.
+- Fixed the (experimental) PostgreSQL search backend occasionally missing close matches in larger libraries.
+- Fixed the (experimental) PostgreSQL search backend sometimes returning noticeably different results depending on the Max Results setting.
+- Fixed the (experimental) PostgreSQL search backend sometimes removing and fully re-indexing images from a temporarily unavailable source (e.g. an unmounted external drive), even when `Purge inactive multimodal embeddings` was off.
+
+---
+
 ## [0.1.55-1] - 2026-08-21
 
 ### Changed
