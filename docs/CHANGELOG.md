@@ -9,7 +9,7 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.56-1] - 2026-08-30
+## [0.1.56-2] - 2026-09-02
 
 ### Added
 
@@ -20,6 +20,7 @@ Notable changes to this project will be documented in this file.
 
 ### Changed
 
+- Improved inventory and backend management.
 - Reduced the size of the embedding server's log file.
 - The (experimental) PostgreSQL search backend now avoids re-parsing and re-hashing an image whose content hasn't actually changed, even if its modification time has (e.g. after a backup or cloud re-sync).
 
