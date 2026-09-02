@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.55-3] - 2026-09-02
+
+### Changed
+
+- Improved inventory and backend management.
+
+---
+
 ## [0.1.55-2] - 2026-08-30
 
 ### Added
