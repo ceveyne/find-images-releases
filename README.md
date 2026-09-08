@@ -36,9 +36,9 @@ It is designed for browsing and organizing large image collections — or uneart
 
 ## What It Does
 
-**[Find Images.app](https://github.com/ceveyne/find-images-releases/releases)** searches local image stores using a combination of metadata search and multimodal embedding search powered by [Qwen3-VL-Embedding](https://github.com/QwenLM/Qwen3-VL-Embedding).
+**[Find Images.app](https://github.com/ceveyne/find-images-releases/releases)** searches local image stores using a combination of visual and metadata embedding powered by [Qwen3-VL-Embedding](https://github.com/QwenLM/Qwen3-VL-Embedding).
 
-The search is **multimodal**. This means: it doesn't just find images that are appropriately tagged or contain parts of the search query in their metadata. Searching and finding also works purely _visually_.
+The search is **semantic**, **multilingual**, and **multimodal**. This means: it doesn't just find images that are appropriately tagged or contain parts of the search query in their metadata. Searching and finding also works purely _visually_.
 
 Natural language descriptions find images, reference images find images, tags find images, filenames find images. (And you can combine everything — use the metadata for searching, apply hard filters on structured fields, and more.)
 
