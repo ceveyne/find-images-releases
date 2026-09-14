@@ -66,6 +66,7 @@ The multimodal index accepts these extension-based input formats:
 - **Native formats:** PNG, JPG/JPEG, HEIC, TGA, BMP, PSD, GIF, HDR, PIC, PPM, and PGM.
 - **Other macOS formats:** ASTC, AVCI, AVIF, DDS, DCM, EXR, HEICS, HEIF, ICNS, ICO, JP2, JXL, KTX, MPO, PBM, PDF, PICT, PVR, SGI, SVG, TIFF, and WebP.
 - **RAW formats:** 3FR, ARW, AXR, CR2, CR3, CRW, DCR, DNG, DXO, ERF, FFF, IIQ, MOS, MRW, NEF, NEFX, NRW, ORF, PEF, RAF, RAW, RW2, RWL, SR2, SRF, SRW, and TIF.
+- **Documents:**  MD (Markdown), PDF, DOCX including images embedded within the document.
 
 HEIC files work both from image directories and from the Apple Photos Library. RAW format support is controlled by the `RAW Images` setting.
 

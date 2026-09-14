@@ -9,11 +9,16 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.57-1] - 2026-09-08
+## [0.1.58-1] - 2026-09-14
 
 ### Added
 
-- Added support for image retrival from MD. MD images can now be found for review and processing.
+- Added support for image retrival from MD, PDF, and DOCX. Document-embedded images can now be found for review and processing.
+- Added an experimental MCP server so external MCP clients can search and tag your images remotely.
+
+### Changed
+
+- The Index Overview now lists documents and extracted document images, and Fusion Embedding progress counts only fusion work.
 
 ---
 
