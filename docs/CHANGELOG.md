@@ -9,7 +9,7 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.58-1] - 2026-09-14
+## [0.1.58-2] - 2026-09-18
 
 ### Added
 
