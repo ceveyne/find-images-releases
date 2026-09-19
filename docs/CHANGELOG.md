@@ -9,42 +9,47 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.58-2] - 2026-09-18
+## [0.1.56-1] - 2026-09-20
 
 ### Added
 
-- Added support for image retrival from MD, PDF, and DOCX. Document-embedded images can now be found for review and processing.
-- Added an experimental MCP server so external MCP clients can search and tag your images remotely.
+- Added an experimental MCP server so external MCP clients can search and tag your images remotely. Requires a PostgreSQL server as an index backend.
+- Added a PostgreSQL server as an index backend. The new backend creates a completely new index. You will notice a substantially higher retrieval speed after re-indexing, but you may switch back to the legacy sqlite3 backend at any time. The new backend leaves your existing sqlite3 index untouched.
 
 ### Changed
 
-- The Index Overview now lists documents and extracted document images, and Fusion Embedding progress counts only fusion work.
+- Fusion Embedding progress counts only fusion work.
+
+### Fixed
+
+- Fixed search results sometimes showing the wrong preview image when two different files shared the same filename.
 
 ---
 
-## [0.1.56-2] - 2026-09-02
+## [0.1.55-3] - 2026-09-02
+
+### Changed
+
+- Improved inventory and backend management.
+
+---
+
+## [0.1.55-2] - 2026-08-30
 
 ### Added
 
-- Added PostgreSQL server as index backend (experimental).
-- Added an option to connect to an already-running llama-server over the network as the multimodal embedding backend (experimental).
 - Added a "Show on map" action (details panel and right-click menu) that opens a photo's location in Maps.
 - Added support for <shift>+<click> range selection in Tiles/List/Table views.
 
 ### Changed
 
-- Improved inventory and backend management.
 - Reduced the size of the embedding server's log file.
-- The (experimental) PostgreSQL search backend now avoids re-parsing and re-hashing an image whose content hasn't actually changed, even if its modification time has (e.g. after a backup or cloud re-sync).
 
 ### Fixed
 
 - Fixed the image preview sometimes closing instead of advancing when browsing search results with the arrow keys.
 - Fixed the local embedding server occasionally restarting itself during a long indexing run.
 - Fixed already-indexed images sometimes being re-embedded unnecessarily when a search ran while a manual reindex was still in progress.
-- Fixed the (experimental) PostgreSQL search backend occasionally missing close matches in larger libraries.
-- Fixed the (experimental) PostgreSQL search backend sometimes returning noticeably different results depending on the Max Results setting.
-- Fixed the (experimental) PostgreSQL search backend sometimes removing and fully re-indexing images from a temporarily unavailable source (e.g. an unmounted external drive), even when `Purge inactive multimodal embeddings` was off.
 
 ---
 
