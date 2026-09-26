@@ -9,6 +9,27 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.56-3] - 2026-09-26
+
+### Fixed
+
+- Fixed the app sometimes losing access to your Photos library when opened through the MCP server.
+- Fixed searches sometimes failing because another open Find Images window had shut down the shared database.
+
+### Changed
+
+- MCP search errors are now reported instead of being shown as "no results found".
+
+---
+
+## [0.1.56-2] - 2026-09-21
+
+### Fixed
+
+- On macOS 27, processing small BMP files could fail under certain conditions, causing them to be skipped during indexing.
+
+---
+
 ## [0.1.56-1] - 2026-09-20
 
 ### Added
